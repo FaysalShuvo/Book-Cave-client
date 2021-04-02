@@ -6,7 +6,7 @@ const AllBooks = ({ allbook }) => {
   const { _id, name, author, price } = allbook || {};
 
   const deleteBook = (event, id) => {
-    const url = `http://localhost:5000/delete/${id}`;
+    const url = `https://calm-island-19056.herokuapp.com/delete/${id}`;
     console.log(url);
     fetch(url, {
       method: "DELETE",

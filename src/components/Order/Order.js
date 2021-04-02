@@ -11,7 +11,7 @@ const Order = () => {
   const [show, setShow] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/books")
+    fetch("https://calm-island-19056.herokuapp.com/books")
       .then((res) => res.json())
       .then((data) => setBook(data));
   }, []);
@@ -21,7 +21,7 @@ const Order = () => {
   const handleCheckOut = () => {
     const newOrder = { ...loggedInUser, orderTime: new Date(), ...found };
     delete newOrder._id;
-    const url = `http://localhost:5000/addOrder`;
+    const url = `https://calm-island-19056.herokuapp.com/addOrder`;
     fetch(url, {
       method: "POST",
       headers: {
