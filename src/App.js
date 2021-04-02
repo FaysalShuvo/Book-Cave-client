@@ -6,7 +6,9 @@ import Footer from "./components/Footer/Footer";
 import Login from "./components/Login/Login";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Order from "./components/Order/Order";
-import AddBook from "./components/AddBook/AddBook";
+import Admin from "./components/Admin/Admin";
+import Deals from "./components/Deals/Deals";
+import Checkout from "./components/Checkout/Checkout";
 
 export const UserContext = createContext();
 
@@ -26,10 +28,17 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
+          <Route path="/deals">
+            <Deals />
+          </Route>
           <PrivateRoute path="/admin">
-            <AddBook />
+            <Admin />
           </PrivateRoute>
-          <PrivateRoute path="/order">
+          <PrivateRoute path="/checkout">
+            <Checkout />
+          </PrivateRoute>
+
+          <PrivateRoute path="/order/:_id">
             <Order />
           </PrivateRoute>
           <Route path="*">

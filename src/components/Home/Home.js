@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <div className="row">
       {books.length === 0 && (
-        <div className="spinner-style">
+        <div className="d-flex justify-content-center align-items-center spinner-style">
           <Spinner animation="grow" />
         </div>
       )}

@@ -25,7 +25,7 @@ const Login = () => {
         const { displayName, email } = res.user;
         const signedInUser = { name: displayName, email };
         setLoggedInUser(signedInUser);
-        console.log(signedInUser);
+
         history.replace(from);
       })
       .catch((error) => {

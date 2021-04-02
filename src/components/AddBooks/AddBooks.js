@@ -1,12 +1,10 @@
-import axios from "axios";
 import React, { useState } from "react";
+import axios from "axios";
 import { useForm } from "react-hook-form";
 
-const AddEvents = () => {
+const AddBooks = () => {
   const { register, handleSubmit } = useForm();
-
   const [imageURL, setImageURL] = useState(null);
-
   const onSubmit = (data) => {
     const eventData = {
       name: data.name,
@@ -44,18 +42,24 @@ const AddEvents = () => {
     <>
       <div className="container text-center">
         <form onSubmit={handleSubmit(onSubmit)}>
+          <br /> <label>Add Book Name</label> <br />
           <input name="name" defaultValue="New Book" ref={register} />
-          <br />
+          <br /> <label>Add Author Name</label> <br />
           <input name="author" defaultValue="Author Name" ref={register} />
           <br />
-          <input name="price" defaultValue="00" ref={register} />
+          <label>Add Book Price</label> <br />
+          <input
+            className="mb-2"
+            name="price"
+            defaultValue="00"
+            ref={register}
+          />
           <br />
           <input
             name="exampleRequired"
             type="file"
             onChange={handleImageUpload}
           />
-
           <br />
           <input type="submit" />
         </form>
@@ -64,4 +68,4 @@ const AddEvents = () => {
   );
 };
 
-export default AddEvents;
+export default AddBooks;
